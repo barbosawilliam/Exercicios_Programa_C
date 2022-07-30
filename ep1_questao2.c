@@ -1,0 +1,154 @@
+#include<stdio.h>
+int main(){
+    int dia1, mes1, ano1, dia2, mes2, ano2;
+    scanf("%d %d %d", &dia1, &mes1, &ano1);
+    scanf("%d %d %d", &dia2, &mes2, &ano2);
+    int i=dia1, controle=1;
+    while(ano1<ano2){
+        if(ano1%4==0 && ano1%100!=0 || ano1%400==0){
+            if(mes1==2){
+                while(dia1<=29){
+                    dia1++;
+                    controle=controle+1;
+                }
+                mes1=mes1+1;
+                dia1=1;
+            }
+            if(mes1==1||mes1==3||mes1==5||mes1==7||mes1==8||mes1==10){
+                while(dia1<=31){
+                    dia1++;
+                    controle=controle+1;
+                }
+                mes1=mes1+1;
+                dia1=1;
+            }
+            if(mes1==4||mes1==6||mes1==9||mes1==11){
+                while(dia1<=30){
+                    dia1++;
+                    controle=controle+1;
+                }
+                mes1=mes1+1;
+                dia1=1;
+            }
+            if(mes1==12){
+                while(dia1<=31){
+                    dia1++;
+                    controle=controle+1;
+                }
+                ano1=ano1+1;
+                mes1=1;
+                dia1=1;
+            }
+        }
+        else{
+            if(mes1==2){
+                while(dia1<=28){
+                    dia1++;
+                    controle=controle+1;
+                }
+                mes1=mes1+1;
+                dia1=1;
+            }
+            if(mes1==1||mes1==3||mes1==5||mes1==7||mes1==8||mes1==10){
+                while(dia1<=31){
+                    dia1++;
+                    controle=controle+1;
+                }
+                mes1=mes1+1;
+                dia1=1;
+            }
+            if(mes1==4||mes1==6||mes1==9||mes1==11){
+                while(dia1<=30){
+                    dia1++;
+                    controle=controle+1;
+                }
+                mes1=mes1+1;
+                dia1=1;
+            }
+            if(mes1==12){
+                while(dia1<=31){
+                    dia1++;
+                    controle=controle+1;
+                }
+                ano1=ano1+1;
+                mes1=1;
+                dia1=1;
+            }
+        }
+    }
+    while(mes1!=mes2){
+        if(ano1%4==0 && ano1%100!=0 || ano1%400==0){
+            if(mes1<mes2){
+                if(mes1==2){
+                    while(dia1<=29){
+                        dia1++;
+                        controle=controle+1;
+                    }
+                    mes1=mes1+1;
+                    dia1=1;
+                }
+            }
+            if(mes1<mes2){
+                if(mes1==1||mes1==3||mes1==5||mes1==7||mes1==8||mes1==10||mes1==12){
+                    while(dia1<=31){
+                        dia1++;
+                        controle=controle+1;
+                    }
+                    mes1=mes1+1;
+                    dia1=1;
+                }
+            }
+            if(mes1<mes2){
+                if(mes1==4||mes1==6||mes1==9||mes1==11){
+                    while(dia1<=30){
+                        dia1++;
+                        controle=controle+1;
+                    }
+                    mes1=mes1+1;
+                    dia1=1;
+                }
+            }
+        }
+        else{
+            if(mes1<mes2){
+                if(mes1==2){
+                    while(dia1<=28){
+                        dia1++;
+                        controle=controle+1;
+                    }
+                    mes1=mes1+1;
+                    dia1=1;
+                }
+            }
+            if(mes1<mes2){
+                if(mes1==1||mes1==3||mes1==5||mes1==7||mes1==8||mes1==10||mes1==12){
+                    while(dia1<=31){
+                        dia1++;
+                        controle=controle+1;
+                    }
+                    mes1=mes1+1;
+                    dia1=1;
+                }
+            }
+            if(mes1<mes2){
+                if(mes1==4||mes1==6||mes1==9||mes1==11){
+                    while(dia1<=30){
+                        dia1++;
+                        controle=controle+1;
+                    }
+                    mes1=mes1+1;
+                    dia1=1;
+                }
+            }    
+        }
+    }
+    if(ano1==ano2 && mes1==mes2 && dia1<dia2){
+        for(i=dia1; i<dia2; i++)
+            controle=controle+1;
+        printf("%d", controle);
+    }
+    if(ano1==ano2 && mes1==mes2 && dia1==dia2){
+        printf("%d", controle);
+    }
+    return 0;
+}
